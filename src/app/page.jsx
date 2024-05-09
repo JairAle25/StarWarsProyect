@@ -1,9 +1,10 @@
-import Image from "next/image";
+
+import Hero from "./hero";
 
 export default function Home() {
   return (
-    <div>
-      <p>hola</p>
-    </div>
+    <main>
+      <Hero></Hero>
+    </main>
   );
 }
