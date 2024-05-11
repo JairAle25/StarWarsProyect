@@ -10,3 +10,7 @@
 :root{
   --colorPrincipal:#ffc500;
 }
+
+body{
+  background-color: black;
+}
