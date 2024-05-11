@@ -29,7 +29,7 @@ export default async function DetailFilm({params}){
                 </div>
                 <div className="w-4/5 text-white flex flex-col gap-3">
                     <h1 className="text-[var(--colorPrincipal)] font-bold text-5xl">{peliculaElegida.title}</h1>
-                    <p className="text-xl">Episodio N°{peliculaElegida.episode_id}</p>
+                    <p className="text-xl">Episodio N° {peliculaElegida.episode_id}</p>
                     <p className="text-xl">Dirigida por: {peliculaElegida.director}</p>
                 </div>
             </section>

@@ -9,7 +9,7 @@ export default function Hero(){
             <p className="text-white text-2xl">Explora el universo de Star Wars: personajes icónicos y películas legendarias</p>
             <div className="text-white flex gap-2">
                 <a href="" className={classNameLinks}>Ver Personajes</a>
-                <a href="" className={classNameLinks}>Ver Peliculas</a>
+                <a href="/peliculas" className={classNameLinks}>Ver Peliculas</a>
             </div>
         </main>
     )
