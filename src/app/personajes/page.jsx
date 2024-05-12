@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import CardPersonaje from "./cardPersonaje";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Loading from "./loading";
 const URL_BASE = "https://swapi.dev/api/people/?page=1"
 
 export default function Personajes(){
@@ -40,19 +41,21 @@ export default function Personajes(){
 
     return(
         <>
-            <InfiniteScroll 
-                dataLength={personajes.length}
-                next={siguientesPersonajes}
-                hasMore={haySiguiente}
-                loader={<h1>Cargando...</h1>}
-                endMessage={<h1>NO HAY MAS PERSONAJES</h1>}
-                className="text-white grid grid-cols-3 place-items-center flex-col gap-5 w-[90%] mx-auto my-0 mt-8"
-
-            >
-                {personajes.map((personaje)=>(
-                    <CardPersonaje key={personaje.name} nombre={personaje.name} ojos={personaje.eye_color} genero={personaje.gender}/>
-                ))}
-            </InfiniteScroll>
+            <div className="flex flex-col">
+                <h1 className="text-white text-5xl text-center mt-8 font-bold">Personajes</h1>
+                <InfiniteScroll 
+                    dataLength={personajes.length}
+                    next={siguientesPersonajes}
+                    hasMore={haySiguiente}
+                    loader={<Loading/>}
+                    endMessage={<h1 className="text-[var(--colorPrincipal)] font-bold text-2xl">NO HAY MAS PERSONAJES</h1>}
+                    className="text-white grid grid-cols-3 place-items-center flex-col gap-5 w-[90%] mx-auto my-0 mt-8 mb-8 overflow-hidden"
+                >
+                    {personajes.map((personaje)=>(
+                        <CardPersonaje key={personaje.name} nombre={personaje.name} ojos={personaje.eye_color} genero={personaje.gender}/>
+                    ))}
+                </InfiniteScroll>
+            </div>
         </>
     )
 }
