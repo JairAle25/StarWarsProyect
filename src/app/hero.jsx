@@ -9,8 +9,8 @@ export default function Hero(){
             <Image src="/starWarsLogo.svg" width={100} height={100} className="w-1/4" alt="logo star wars"></Image>
             <p className="text-white text-2xl">Explora el universo de Star Wars: personajes icónicos y películas legendarias</p>
             <div className="text-white flex gap-2">
-                <Link href="./personajes" className={classNameLinks}>Ver Personajes</Link>
-                <Link href="./peliculas" className={classNameLinks}>Ver Peliculas</Link>
+                <Link href="/personajes" className={classNameLinks}>Ver Personajes</Link>
+                <Link href="/peliculas" className={classNameLinks}>Ver Peliculas</Link>
             </div>
         </main>
     )
