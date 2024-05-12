@@ -25,7 +25,7 @@ export default async function DetailFilm({params}){
         <>
             <section className="w-[90%] mx-auto my-0 flex gap-5 mt-7">
                 <div className="w-1/6">
-                    <Image src={portadaFilms} className="w-full"/>
+                    <Image src={portadaFilms} alt="portada pelicula star wars" className="w-full"/>
                 </div>
                 <div className="w-4/5 text-white flex flex-col gap-3">
                     <h1 className="text-[var(--colorPrincipal)] font-bold text-5xl">{peliculaElegida.title}</h1>

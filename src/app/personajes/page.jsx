@@ -50,7 +50,7 @@ export default function Personajes(){
 
             >
                 {personajes.map((personaje)=>(
-                    <CardPersonaje nombre={personaje.name} ojos={personaje.eye_color} genero={personaje.gender}/>
+                    <CardPersonaje key={personaje.name} nombre={personaje.name} ojos={personaje.eye_color} genero={personaje.gender}/>
                 ))}
             </InfiniteScroll>
         </>

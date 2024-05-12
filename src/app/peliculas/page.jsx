@@ -14,7 +14,7 @@ export default async function Peliculas(){
             <h1 className="text-white text-4xl pt-9 font-bold">Peliculas</h1>
             <div className="flex flex-wrap justify-between items-center gap-6 w-[95%] mx-auto my-0 mt-16">
                 {peliculas.results.map((pelicula)=>(
-                    <CardFilm titulo={pelicula.title} episodio={pelicula.episode_id}></CardFilm>
+                    <CardFilm key={pelicula.episode_id} titulo={pelicula.title} episodio={pelicula.episode_id}></CardFilm>
                 ))}
             </div>
         </section>
