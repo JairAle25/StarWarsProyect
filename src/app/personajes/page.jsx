@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import CardPersonaje from "./cardPersonaje";
+import InfiniteScroll from "react-infinite-scroll-component";
 const URL_BASE = "https://swapi.dev/api/people/?page=1"
 
 export default function Personajes(){
@@ -38,9 +40,19 @@ export default function Personajes(){
 
     return(
         <>
-            <section className="text-white">
-                <p>personajes</p>
-            </section>
+            <InfiniteScroll 
+                dataLength={personajes.length}
+                next={siguientesPersonajes}
+                hasMore={haySiguiente}
+                loader={<h1>Cargando...</h1>}
+                endMessage={<h1>NO HAY MAS PERSONAJES</h1>}
+                className="text-white grid grid-cols-3 place-items-center flex-col gap-5 w-[90%] mx-auto my-0 mt-8"
+
+            >
+                {personajes.map((personaje)=>(
+                    <CardPersonaje nombre={personaje.name} ojos={personaje.eye_color} genero={personaje.gender}/>
+                ))}
+            </InfiniteScroll>
         </>
     )
 }
