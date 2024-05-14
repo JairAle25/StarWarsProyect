@@ -22,17 +22,17 @@ export default function CardPersonaje({nombre,ojos,genero}){
     
     return(
         <>
-            <Link href={`/personajes/${nombreLink}`}  className="flex flex-col justify-center items-center gap-3 max-w-[450px] border rounded-lg py-4 px-6 transition-all duration-1000 bg-[#333333] hover:bg-gray-900" >  
-                <h1 className="text-[var(--colorPrincipal)] font-bold text-xl">{nombre}</h1>
+            <Link href={`/personajes/${nombreLink}`}  className="flex flex-col justify-center items-center gap-3 max-w-[450px] border rounded-lg py-4 px-6 transition-all duration-1000 bg-[#333333] hover:bg-gray-900 md:max-w-[300px]" >  
+                <h1 className="text-[var(--colorPrincipal)] font-bold text-xl md:text-2xl">{nombre}</h1>
                 <Image src={fotoPersonajes} alt="personaje star wars" className="rounded-md"/>
                 {ojos !=="unknown" && 
-                <p className="flex justify-center items-center gap-2">Color de ojos : 
+                <p className="flex justify-center items-center gap-2 md:text-lg">Color de ojos : 
                     {colores.map((color,index)=>(
-                        <i key={index} className="bi bi-eye-fill text-2xl" style={{ color: color }}></i>
+                        <i key={index} className="bi bi-eye-fill text-2xl md:text-3xl" style={{ color: color }}></i>
                     ))}
                 </p>
                 }
-                {genero !== "n/a" && <p className="flex justify-center items-center gap-2">Genero: <i className={`${classGenero} text-3xl`}></i></p>}
+                {genero !== "n/a" && <p className="flex justify-center items-center gap-2 md:text-lg">Genero: <i className={`${classGenero} text-3xl md:text-4xl`}></i></p>}
             </Link>
         </>
     )

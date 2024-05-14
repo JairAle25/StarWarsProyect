@@ -32,18 +32,20 @@ export default async function DetallePersonaje({params}){
     const {detallePersonaje} = params;
     const personaje = detallePersonaje.split("-").join(" ");
     const datosPersonaje = await getPersonajeElegido(personaje)
+
+    const classTexto= "md:text-2xl";
     return(
         <>
             <section className="text-white w-[90%] mx-auto my-0 flex flex-col-reverse justify-center items-center gap-5 mt-9">
-                <Image src={fotoPersonajes} alt="personaje star wars" className="w-1/4"/>
-                <div className="text-xl flex flex-col gap-2 text-center">
-                    <h1 className="text-5xl text-[var(--colorPrincipal)] font-bold">{datosPersonaje.name}</h1>
-                    {datosPersonaje.eye_color!=="unknown" && <p>OJOS : <span className="font-bold">{datosPersonaje.eye_color}</span></p>}
-                    {datosPersonaje.birth_year !== "unknown" && <p>CUMPLEAÑOS : <span className="font-bold"> {datosPersonaje.birth_year}</span></p>}
-                    {datosPersonaje.hair_color!=="n/a" && <p>COLOR DE PELO : <span className="font-bold">{datosPersonaje.hair_color}</span></p>}
-                    <p>ALTURA : <span className="font-bold">{datosPersonaje.height}</span></p>
-                    <p>COLOR DE PIEL : <span className="font-bold">{datosPersonaje.skin_color}</span></p>
-                    {datosPersonaje.mass !== "unknown" && <p>MASA : <span className="font-bold">{datosPersonaje.mass}</span></p>}
+                <Image src={fotoPersonajes} alt="personaje star wars" className="w-1/4 md:w-1/2"/>
+                <div className="text-xl flex flex-col gap-2 text-center md:gap-5">
+                    <h1 className="text-5xl text-[var(--colorPrincipal)] font-bold md:text-6xl">{datosPersonaje.name}</h1>
+                    {datosPersonaje.eye_color!=="unknown" && <p className={classTexto}>OJOS : <span className="font-bold">{datosPersonaje.eye_color}</span></p>}
+                    {datosPersonaje.birth_year !== "unknown" && <p className={classTexto}>CUMPLEAÑOS : <span className="font-bold"> {datosPersonaje.birth_year}</span></p>}
+                    {datosPersonaje.hair_color!=="n/a" && <p className={classTexto}>COLOR DE PELO : <span className="font-bold">{datosPersonaje.hair_color}</span></p>}
+                    <p className={classTexto}>ALTURA : <span className="font-bold">{datosPersonaje.height}</span></p>
+                    <p className={classTexto}>COLOR DE PIEL : <span className="font-bold">{datosPersonaje.skin_color}</span></p>
+                    {datosPersonaje.mass !== "unknown" && <p className={classTexto}>MASA : <span className="font-bold">{datosPersonaje.mass}</span></p>}
                 </div>
             </section>
         </>
