@@ -43,7 +43,7 @@ export default async function DetallePersonaje({params}){
                     {datosPersonaje.hair_color!=="n/a" && <p>COLOR DE PELO : <span className="font-bold">{datosPersonaje.hair_color}</span></p>}
                     <p>ALTURA : <span className="font-bold">{datosPersonaje.height}</span></p>
                     <p>COLOR DE PIEL : <span className="font-bold">{datosPersonaje.skin_color}</span></p>
-                    <p>MASA : <span className="font-bold">{datosPersonaje.mass}</span></p>
+                    {datosPersonaje.mass !== "unknown" && <p>MASA : <span className="font-bold">{datosPersonaje.mass}</span></p>}
                 </div>
             </section>
         </>
