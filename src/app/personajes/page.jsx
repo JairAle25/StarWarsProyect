@@ -49,7 +49,7 @@ export default function Personajes(){
                     hasMore={haySiguiente}
                     loader={<Loading/>}
                     endMessage={<h1 className="text-[var(--colorPrincipal)] font-bold text-2xl">NO HAY MAS PERSONAJES</h1>}
-                    className="text-white grid grid-cols-3 place-items-center flex-col gap-5 w-[90%] mx-auto my-0 mt-8 mb-8 overflow-hidden"
+                    className="text-white flex flex-wrap justify-between items-center gap-5 w-[90%] mx-auto my-0 mt-8 mb-8"
                 >
                     {personajes.map((personaje)=>(
                         <CardPersonaje key={personaje.name} nombre={personaje.name} ojos={personaje.eye_color} genero={personaje.gender}/>
