@@ -50,7 +50,7 @@ export default async function DetailFilm({params}){
                     <h1 className="text-[var(--colorPrincipal)] text-3xl font-bold py-6">Personajes</h1>
                     <div className="w-full flex overflow-x-scroll gap-8">
                         {personajes.map((personaje) =>(
-                            <Link href={`/personajes/${personaje.name.split(" ").join("-")}`} className="flex flex-col items-center justify-center min-w-[15%] mb-5 border px-2 py-3 rounded-lg transition-all duration-1000 hover:bg-[#333333]">
+                            <Link key={personaje.name} href={`/personajes/${personaje.name.split(" ").join("-")}`} className="flex flex-col items-center justify-center min-w-[15%] mb-5 border px-2 py-3 rounded-lg transition-all duration-1000 hover:bg-[#333333]">
                                 <h1 className="text-[var(--colorPrincipal)] text-base font-semibold pb-2">{personaje.name}</h1>
                                 <Image src={fotoPersonajes}/>
                             </Link>

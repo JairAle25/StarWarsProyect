@@ -35,7 +35,7 @@ export default async function DetallePersonaje({params}){
     return(
         <>
             <section className="text-white w-[90%] mx-auto my-0 flex flex-col-reverse justify-center items-center gap-5 mt-9">
-                <Image src={fotoPersonajes} className="w-1/4"/>
+                <Image src={fotoPersonajes} alt="personaje star wars" className="w-1/4"/>
                 <div className="text-xl flex flex-col gap-2 text-center">
                     <h1 className="text-5xl text-[var(--colorPrincipal)] font-bold">{datosPersonaje.name}</h1>
                     {datosPersonaje.eye_color!=="unknown" && <p>OJOS : <span className="font-bold">{datosPersonaje.eye_color}</span></p>}
