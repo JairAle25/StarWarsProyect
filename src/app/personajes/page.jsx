@@ -42,14 +42,14 @@ export default function Personajes(){
     return(
         <>
             <div className="flex flex-col">
-                <h1 className="text-white text-5xl text-center mt-8 font-bold">Personajes</h1>
+                <h1 className="text-[var(--colorPrincipal)] text-4xl xl:text-5xl text-center mt-8 font-bold">Personajes</h1>
                 <InfiniteScroll 
                     dataLength={personajes.length}
                     next={siguientesPersonajes}
                     hasMore={haySiguiente}
                     loader={<Loading/>}
                     endMessage={<h1 className="text-[var(--colorPrincipal)] font-bold text-2xl">NO HAY MAS PERSONAJES</h1>}
-                    className="text-white flex flex-wrap justify-between items-center gap-5 w-[90%] mx-auto my-0 mt-8 mb-8 md:justify-center md:gap-9"
+                    className="text-white flex flex-wrap items-center w-[90%] mx-auto my-0 mt-8 mb-8 gap-6  justify-center xl:justify-between xl:gap-5 md:gap-9"
                 >
                     {personajes.map((personaje)=>(
                         <CardPersonaje key={personaje.name} nombre={personaje.name} ojos={personaje.eye_color} genero={personaje.gender}/>
