@@ -14,3 +14,18 @@
 body{
   background-color: black;
 }
+
+.scroll::-webkit-scrollbar {
+  width: 12px; 
+}
+
+
+.scroll::-webkit-scrollbar-track {
+  background: #5e5e5e; 
+  border-radius: 6px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: var(--colorPrincipal);
+  border-radius: 6px;
+}

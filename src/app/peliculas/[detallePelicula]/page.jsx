@@ -48,7 +48,7 @@ export default async function DetailFilm({params}){
                 </div>
                 <div className="flex flex-col justify-center items-center w-full">
                     <h1 className="text-[var(--colorPrincipal)] font-bold py-6 text-2xl xl:text-3xl md:text-4xl">Personajes</h1>
-                    <div className="w-full flex overflow-x-scroll gap-8">
+                    <div className="w-full flex overflow-x-scroll gap-8 scroll">
                         {personajes.map((personaje) =>(
                             <Link key={personaje.name} href={`/personajes/${personaje.name.split(" ").join("-")}`} className="flex flex-col items-center justify-center mb-5 border px-2 py-3 rounded-lg transition-all duration-1000 hover:bg-[#333333] text-center min-w-[55%] xl:min-w-[15%] md:min-w-[30%]">
                                 <h1 className="text-[var(--colorPrincipal)] text-centerfont-semibold pb-2  xl:text-base md:text-2xl">{personaje.name}</h1>
